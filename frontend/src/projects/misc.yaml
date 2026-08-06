@@ -1,0 +1,6 @@
+projects:
+  - title: Lenta Mobile Parser
+    description: Парсер мобильного приложения "Лента Онлайн"
+
+  - title: Sudact
+    description: Парсер сайта sudact.ru

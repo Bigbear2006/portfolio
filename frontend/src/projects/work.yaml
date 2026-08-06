@@ -1,0 +1,102 @@
+- title: Migstarbot
+  username: migstarbot
+  description: Бот для покупки тарелок Starlink и управления его тарифом.
+  features:
+    - Выбор и покупка тарелки
+    - Оплата через Alfa
+    - Оплата тарифов
+
+- title: Almaz Market
+  username: Almaz_lombard_bot
+  description: Бот для сети ломбардов.
+  features:
+    - Вход и регистрация по номеру телефона
+    - Отправка фото для онлайн оценки
+    - Просмотр информации и отзывов филиалов ломбарда
+    - Просмотр сайтов и соцсетей ломбарда
+
+- title: SoulMind
+  username: Soul_Muse_bot
+  description: Бот по астрологии хьюман дизайну.
+  features:
+    - Генерация отчетов через ChatGPT
+    - Озвучка текстов через Yandex Speech Kit
+
+- title: Crypto Tracker
+  username: Galia13_bot
+  description: Бот для отслеживания криптовалют и кошельков.
+  features:
+    - Отслеживание изменений цен на монеты
+    - Отслеживание новых транзакций кошельков
+    - Отслеживание появления новых крипто-монет по фильтрам
+
+- title: Vector
+  username: Vectorcore_bot
+  description: Бот для самодисциплины.
+  features:
+    - Ежедневные квесты
+
+- title: SiteON
+  username: SiteON_bot
+  description: Бот для мониторинга доступности сайтов из различных стран.
+  features:
+    - Оплата через Stripe
+
+- title: DOM-KIT
+  username: dom_kit_bot
+  description: Бот для поиска квартир в жилом комплексе "КИТ".
+  features:
+    - Поиск квартир с фильтрацией
+
+- title: COSMOSHARE
+  username: cosmoshare_bot
+  description: Бот для поиска товаров (небольшой аналог авито).
+  features:
+    - Управление своими товарами
+
+- title: PrimeDex
+  username: PrimeDex7Bot
+  description: Бот для мониторинга сигналов.
+  features:
+    - Парсинг биржи mevx.io
+
+- title: HRTechno
+  username: HRTechnoBot
+  description: Бот для помощи рекрутерам.
+  features:
+    - Ответы на вопросы о компании с помощью ChatGPT
+    - Отслеживание использования кнопок в боте
+    - Просмотр FAQ и информации о работодателе
+
+- title: Frambini | MB
+  username: frambinimb_bot
+  description: Бот для покупки мороженного frambini.
+  features:
+    - Просмотр товаров и добавление в корзину
+    - Оплата через Юкасса
+
+- title: Ресториум
+  username: neurochefx_bot
+  description: Бот для помощи в управлении рестораном и кухней.
+  features:
+    - Диалог с ChatGPT с поддержкой Фото, PDF и Excel файлов
+
+- title: Работа в ПВЗ
+  username: pvzjoboffer_bot
+  description: Бот для поиска работы и работников в ПВЗ
+  features:
+    - Проверка паспорта
+
+- title: LeadParser
+  description: Юзер-бот для мониторинга чатов и поиска ключевых слов
+  features:
+    - Фильтрация сообщений в чатах по ключевым словам
+    - Отправка сообщений пользователям
+
+- title: Дикообщительный бот
+  username: dikoobshcitelniy_bot
+  description: Бот для поиска людей с похожими взглядами
+  features:
+    - Заполнение анкеты
+    - Поиск похожих людей
+    - Общение с несколькими людьми одновременно через темы в телеграм чатах

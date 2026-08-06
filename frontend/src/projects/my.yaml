@@ -1,0 +1,25 @@
+- title: ClassFlow
+  description: Сайт для управления учебным процессом дополнительного образования
+  url: https://classflow.ru
+  github: https://github.com/Bigbear2006/classflow
+  year: 2026
+  stack:
+    - Python
+    - FastAPI
+    - PostgreSQL
+    - Redis
+    - TypeScript
+    - React
+    - TailwindCSS
+  features:
+    - Авторизация по JWT
+    - Безопасность на уровне строк (RLS) и составные внешние ключи
+
+- title: Telegram Bot Template
+  description: Шаблон для телеграм ботов
+  github: https://github.com/Bigbear2006/aiogram-django-template
+  year: 2026
+  stack:
+    - Python
+    - Aiogram
+    - FastAPI

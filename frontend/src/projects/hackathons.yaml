@@ -1,0 +1,19 @@
+- title: РЖД Бот
+  description: Бот для извлечения данных паспорта и билета из фото и PDF
+  date: Осень 2023
+  place: 1
+
+- title: ResidentCard
+  description: Сайт жителя области
+  date: Весна 2024
+  place: 2
+
+- title: GroupGuard
+  description: Telegram Web App для управления участниками группы
+  date: Осень 2024
+  place: 1
+
+- title: EventHub
+  description: Сайт для регистрации на мероприятия
+  date: Весна 2026
+  place: 3
