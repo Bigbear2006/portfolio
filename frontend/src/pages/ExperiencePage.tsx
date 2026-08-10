@@ -7,7 +7,7 @@ export function ExperiencePage() {
   return (
     <div className="flex flex-col gap-5">
       <PageTitle title="Опыт работы" />
-      <div className="flex flex-col gap-5 bg-[var(--bg-inner)] p-5 rounded-xl">
+      <div className="flex flex-col gap-5 bg-card p-5 rounded-xl">
         <div>
           <p className="text-xl font-semibold">BOTTEC</p>
           <p className="text-md">Март 2025 - Апрель 2026 (1 год 2 месяца)</p>
@@ -25,7 +25,10 @@ export function ExperiencePage() {
         <div className="flex flex-col gap-2.5">
           <p className="text-xl font-semibold">Проекты</p>
           {workProjects.map((project) => (
-            <div className="flex flex-col p-2.5 bg-[var(--bg)] rounded-xl">
+            <div
+              key={project.title}
+              className="flex flex-col p-2.5 bg-card rounded-xl"
+            >
               <p className="text-lg font-semibold">{project.title}</p>
               <p className="text-md">{project.description}</p>
             </div>

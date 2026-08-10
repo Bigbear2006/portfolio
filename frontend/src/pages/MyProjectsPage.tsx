@@ -10,7 +10,7 @@ export function MyProjectsPage() {
       {myProjects.map((project) => (
         <div
           key={project.title}
-          className="flex flex-col bg-[var(--bg-inner)] p-5 rounded-xl"
+          className="flex flex-col bg-card p-5 rounded-xl"
         >
           <p className="text-lg font-semibold">{project.title}</p>
           <p className="text-md">{project.description}</p>

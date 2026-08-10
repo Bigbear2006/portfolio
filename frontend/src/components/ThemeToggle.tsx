@@ -30,6 +30,7 @@ function applyThemeMode(mode: ThemeMode) {
   }
 
   document.documentElement.style.colorScheme = resolved
+  return resolved
 }
 
 export default function ThemeToggle() {
@@ -37,8 +38,8 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const initialMode = getInitialMode()
-    setMode(initialMode)
-    applyThemeMode(initialMode)
+    const resolvedMode = applyThemeMode(initialMode)
+    setMode(resolvedMode)
   }, [])
 
   useEffect(() => {
@@ -73,7 +74,7 @@ export default function ThemeToggle() {
       onClick={toggleMode}
       aria-label={label}
       title={label}
-      className="transition hover:-translate-y-0.5 self-end"
+      className="transition self-end"
     >
       {mode === 'auto' ? 'Auto' : mode === 'dark' ? <Moon /> : <Sun />}
     </button>

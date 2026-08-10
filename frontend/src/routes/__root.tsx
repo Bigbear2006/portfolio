@@ -15,7 +15,12 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Bigbear',
+        title: 'Bigbear | Full Stack Разработчик',
+      },
+      {
+        name: 'description',
+        content:
+          'Bigbear - Full stack разработчик сайтов, телеграм ботов и Telegram Web App',
       },
     ],
     links: [

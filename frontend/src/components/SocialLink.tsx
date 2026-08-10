@@ -6,7 +6,7 @@ interface SocialLinkProps {
 export function SocialLink({ url, icon }: SocialLinkProps) {
   return (
     <a href={url} target="_blank">
-      <div className="flex items-center justify-center rounded-full bg-[var(--bg)] p-2.5 transition">
+      <div className="flex items-center justify-center rounded-full border-2 border-border hover:ring-4 ring-primary/25 p-2.5 transition">
         {icon}
       </div>
     </a>
