@@ -10,7 +10,9 @@ export function Footer() {
     <Section>
       <CardList>
         <Card>
-          <p className="text-md">&copy; {year} Bigbear</p>
+          <p className="text-md self-center sm:self-auto">
+            &copy; {year} Bigbear
+          </p>
           <div className="flex gap-2 justify-center">
             <SocialLink
               url="https://github.com/Bigbear2006"

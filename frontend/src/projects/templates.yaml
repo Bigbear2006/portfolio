@@ -1,8 +1,0 @@
-projects:
-  - title: django + django REST framework
-    description: Шаблон для сайта на Django REST Framework
-    github: https://github.com/Bigbear2006/django-drf-template
-
-  - title: aiogram + django
-    description: Шаблон для телеграм ботов
-    github: https://github.com/Bigbear2006/aiogram-django-template

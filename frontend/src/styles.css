@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');*/
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
@@ -13,6 +13,7 @@
   --color-card: rgba(181 181 181 / 0.45);
   --color-border: rgba(255, 255, 255, 0.4);
   --color-muted: #78716c;
+  --color-accent: #047091;
 }
 
 .dark {

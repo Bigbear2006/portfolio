@@ -1,21 +1,35 @@
 import { ArrowRight } from 'lucide-react'
-import type { ReactNode } from 'react'
+import type { ReactNode, RefObject } from 'react'
 import { useNavigate } from '@tanstack/react-router'
+import { cn } from '#/lib/utils.ts'
 
-export function Section({ children }: { children: ReactNode }) {
-  return <div className="flex flex-col gap-4 py-5 sm:px-5">{children}</div>
+export function Section({
+  children,
+  className,
+}: {
+  children: ReactNode
+  className?: string
+}) {
+  return (
+    <div className={cn('flex flex-col gap-4 py-5 sm:px-5', className)}>
+      {children}
+    </div>
+  )
 }
 
 export function SectionTitle({
   title,
   navigateTo,
+  ref,
 }: {
   title: string
   navigateTo?: string
+  ref?: RefObject<HTMLDivElement | null>
 }) {
   const navigate = useNavigate()
   return (
     <div
+      ref={ref}
       className="flex items-baseline gap-4"
       onClick={() => navigate({ to: navigateTo })}
     >
@@ -23,7 +37,6 @@ export function SectionTitle({
         <h2 className="text-2xl font-mono">{title}</h2>
         {navigateTo && <ArrowRight className="self-center mt-0.5" />}
       </div>
-      {/* {!navigateTo && <span className="flex-1 h-[1.5px] bg-card"></span>}*/}
     </div>
   )
 }

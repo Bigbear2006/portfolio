@@ -11,9 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LayoutRouteImport } from './routes/_layout'
 import { Route as LayoutIndexRouteImport } from './routes/_layout.index'
-import { Route as LayoutMyProjectsRouteImport } from './routes/_layout.my-projects'
-import { Route as LayoutHackathonsRouteImport } from './routes/_layout.hackathons'
-import { Route as LayoutExperienceRouteImport } from './routes/_layout.experience'
+import { Route as LayoutProjectsRouteImport } from './routes/_layout.projects'
+import { Route as LayoutProjectSlugRouteImport } from './routes/_layout.project.$slug'
 
 const LayoutRoute = LayoutRouteImport.update({
   id: '/_layout',
@@ -24,54 +23,45 @@ const LayoutIndexRoute = LayoutIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LayoutRoute,
 } as any)
-const LayoutMyProjectsRoute = LayoutMyProjectsRouteImport.update({
-  id: '/my-projects',
-  path: '/my-projects',
+const LayoutProjectsRoute = LayoutProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
   getParentRoute: () => LayoutRoute,
 } as any)
-const LayoutHackathonsRoute = LayoutHackathonsRouteImport.update({
-  id: '/hackathons',
-  path: '/hackathons',
-  getParentRoute: () => LayoutRoute,
-} as any)
-const LayoutExperienceRoute = LayoutExperienceRouteImport.update({
-  id: '/experience',
-  path: '/experience',
+const LayoutProjectSlugRoute = LayoutProjectSlugRouteImport.update({
+  id: '/project/$slug',
+  path: '/project/$slug',
   getParentRoute: () => LayoutRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof LayoutIndexRoute
-  '/experience': typeof LayoutExperienceRoute
-  '/hackathons': typeof LayoutHackathonsRoute
-  '/my-projects': typeof LayoutMyProjectsRoute
+  '/projects': typeof LayoutProjectsRoute
+  '/project/$slug': typeof LayoutProjectSlugRoute
 }
 export interface FileRoutesByTo {
-  '/experience': typeof LayoutExperienceRoute
-  '/hackathons': typeof LayoutHackathonsRoute
-  '/my-projects': typeof LayoutMyProjectsRoute
+  '/projects': typeof LayoutProjectsRoute
   '/': typeof LayoutIndexRoute
+  '/project/$slug': typeof LayoutProjectSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_layout': typeof LayoutRouteWithChildren
-  '/_layout/experience': typeof LayoutExperienceRoute
-  '/_layout/hackathons': typeof LayoutHackathonsRoute
-  '/_layout/my-projects': typeof LayoutMyProjectsRoute
+  '/_layout/projects': typeof LayoutProjectsRoute
   '/_layout/': typeof LayoutIndexRoute
+  '/_layout/project/$slug': typeof LayoutProjectSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/experience' | '/hackathons' | '/my-projects'
+  fullPaths: '/' | '/projects' | '/project/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/experience' | '/hackathons' | '/my-projects' | '/'
+  to: '/projects' | '/' | '/project/$slug'
   id:
     | '__root__'
     | '/_layout'
-    | '/_layout/experience'
-    | '/_layout/hackathons'
-    | '/_layout/my-projects'
+    | '/_layout/projects'
     | '/_layout/'
+    | '/_layout/project/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -94,42 +84,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutIndexRouteImport
       parentRoute: typeof LayoutRoute
     }
-    '/_layout/my-projects': {
-      id: '/_layout/my-projects'
-      path: '/my-projects'
-      fullPath: '/my-projects'
-      preLoaderRoute: typeof LayoutMyProjectsRouteImport
+    '/_layout/projects': {
+      id: '/_layout/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof LayoutProjectsRouteImport
       parentRoute: typeof LayoutRoute
     }
-    '/_layout/hackathons': {
-      id: '/_layout/hackathons'
-      path: '/hackathons'
-      fullPath: '/hackathons'
-      preLoaderRoute: typeof LayoutHackathonsRouteImport
-      parentRoute: typeof LayoutRoute
-    }
-    '/_layout/experience': {
-      id: '/_layout/experience'
-      path: '/experience'
-      fullPath: '/experience'
-      preLoaderRoute: typeof LayoutExperienceRouteImport
+    '/_layout/project/$slug': {
+      id: '/_layout/project/$slug'
+      path: '/project/$slug'
+      fullPath: '/project/$slug'
+      preLoaderRoute: typeof LayoutProjectSlugRouteImport
       parentRoute: typeof LayoutRoute
     }
   }
 }
 
 interface LayoutRouteChildren {
-  LayoutExperienceRoute: typeof LayoutExperienceRoute
-  LayoutHackathonsRoute: typeof LayoutHackathonsRoute
-  LayoutMyProjectsRoute: typeof LayoutMyProjectsRoute
+  LayoutProjectsRoute: typeof LayoutProjectsRoute
   LayoutIndexRoute: typeof LayoutIndexRoute
+  LayoutProjectSlugRoute: typeof LayoutProjectSlugRoute
 }
 
 const LayoutRouteChildren: LayoutRouteChildren = {
-  LayoutExperienceRoute: LayoutExperienceRoute,
-  LayoutHackathonsRoute: LayoutHackathonsRoute,
-  LayoutMyProjectsRoute: LayoutMyProjectsRoute,
+  LayoutProjectsRoute: LayoutProjectsRoute,
   LayoutIndexRoute: LayoutIndexRoute,
+  LayoutProjectSlugRoute: LayoutProjectSlugRoute,
 }
 
 const LayoutRouteWithChildren =

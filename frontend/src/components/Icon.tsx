@@ -1,4 +1,5 @@
 import StackIcon from 'tech-stack-icons'
+import { cn } from '#/lib/utils.ts'
 
 function TelegramIcon() {
   return (
@@ -184,11 +185,12 @@ const icons: Record<string, React.ReactNode> = {
 
 interface IconProps {
   name: string
+  className?: string
 }
 
-export function Icon({ name }: IconProps) {
+export function Icon({ name, className }: IconProps) {
   if (name in icons) {
     return icons[name]
   }
-  return <StackIcon name={name} className="w-5 h-5" />
+  return <StackIcon name={name} className={cn('w-5 h-5', className)} />
 }

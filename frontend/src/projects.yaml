@@ -1,0 +1,172 @@
+- title: Prime Electronics
+  short_description: Интернет магазин электроники
+  description: Интернет магазин электроники
+  slug: prime-electronics
+  type: COMMERCIAL
+  url: https://prime-electronics.ru
+  year: 2026
+
+- title: Нейрошеф
+  short_description: Telegram Web App для помощи в управлении рестораном и кухней.
+  description: |
+    Мини-приложение внутри телеграм, которое убирает рутину в работе шеф-повара:
+    помогает составить новое меню, график смен или проанализоровать поставщиков.
+    Пользователь может прикреплять к своему вопросу Фото, Файлы (PDF, Excel) или записывать вопрос голосом.
+    В ответ бот может прислать не только текст, но и готовый PDF или Excel Файл.
+    Работает по подписке с оплатой через Юкассу, есть тестовый период.
+  image: src/assets/logo/neurochef.png
+  slug: neurochef
+  type: COMMERCIAL
+  year: 2025
+  features:
+    - Обработка фото, файлов и аудио в вопросах
+    - Генерация PDF и Excel файлов в ответе
+    - Система подписок и прием платежей через Юкассу
+
+- title: ClassFlow
+  short_description: Сайт для управления организациями дополнительного образования.
+  description: |
+    Сайт для управления образовательными организациями.
+    Любой пользователь может создать свою организацию или присоединиться к существующей.
+    Реализованы четыре роли (владелец, администратор, учитель, ученик) с разными правами доступа.
+    Сайт предоставляет функционал для управления участниками организации,
+    групповыми и индивидуальными курсами, расписанием,
+    а также позволяет вести учёт посещаемости и оплат.
+  image: src/assets/logo/classflow.png
+  slug: classflow
+  type: PET
+  url: classflow.ru
+  github: https://github.com/Bigbear2006/classflow
+  year: 2026
+  features:
+    - JWT-Авторизация с подтверждением почты
+    - Изоляция данных разных организаций на уровне БД (Row-Level Security
+    - Хранение файлов в S3
+    - Сбор и отображение метрик с помощью Prometheus и Grafana
+
+- title: Telegram Bot Template
+  short_description: Шаблон телеграм бота c админ-панелью и настроенным деплоем.
+  description: |
+    Стартовый шаблон, в который я собрал всё, что повторялось в десятках моих Telegram-ботов.
+    В репозитории собрано все для рабочей основы: админ-панель на Django,
+    фоновые задачи на Celery и Redis, контейнеризацию в Docker, Nginx и настроенный CI/CD.
+    В проекте есть ruff для линтинга и mypy для типизации, а часто нужные middleware и фильтры уже написаны.
+    Это намного сокращает время на старт нового проекта.
+  slug: telegram-bot-template
+  type: PET
+  github: https://github.com/Bigbear2006/aiogram-django-template
+  year: 2026
+  features:
+    - aiogram + Django с админ-панелью
+    - Celery и Redis для фоновых задач
+    - Docker, Nginx и CI/CD для деплоя в один шаг
+    - Линтинг ruff и строгая типизация mypy
+    - Готовые middleware и фильтры
+
+- title: DOM KIT
+  short_description: Telegram-бот для поиска квартир в жилом комплексе
+  description: |
+    Бот помогает покупателям искать квартиры в жилом комплексе двумя способами:
+    через фильтры или визуально, выбирая очередь, секцию и этаж по картинкам.
+    Квартиры можно добавлять в избранное и подписываться на изменения (например, цены).
+    Внутри бота также есть новости и акции, а заявки и вопросы автоматически уходят в Bitrix.
+    Главная инженерная задача — огромный объём фото, видео и документов. Каждый файл
+    загружается на сервера Telegram один раз и дальше отправляется по file_id,
+    поэтому бот отвечает быстро и не загружает файлы повторно.
+  image: src/assets/logo/dom-kit.png
+  slug: dom-kit
+  type: COMMERCIAL
+  year: 2025
+  features:
+    - Поиск по фильтрам и по картинкам (очередь, секция, этаж)
+    - Избранное и подписка на обновления (например, изменение цены)
+    - Заявки и вопросы автоматически отправляются в Bitrix
+    - Новости и акции застройщика
+    - Файлы загружаются в Telegram один раз и отправляются по file_id
+
+- title: Работа в ПВЗ
+  short_description: Telegram-бот для поиска сотрудников и работы в ПВЗ
+  description: |
+    Площадка для найма в пунктах выдачи заказов прямо в Telegram.
+    Работодатель регистрирует свои ПВЗ и создаёт смены, а соискатель получает подборку
+    подходящих вакансий по навыкам и местоположению. Навыки можно подтвердить квизами,
+    а реферальная система помогает боту расти за счёт самих пользователей.
+  image: src/assets/logo/pickup-points.png
+  slug: pickup-points
+  type: COMMERCIAL
+  year: 2025
+  features:
+    - 'Две роли: работник и работодатель'
+    - Управление ПВЗ и создание смен
+    - Подбор вакансий по навыкам и местоположению
+    - Проверка навыков квизами
+    - Реферальная система
+
+- title: Frambini
+  short_description: Telegram-бот для продажи мороженного
+  description: |
+    Бот для выездного мероприятия: гость выбирает мороженое, оплачивает прямо в Telegram,
+    указывает свой ряд и место, и заказ приносят ему на место.
+    Не нужно стоять в очереди или носить с собой наличные.
+  image: src/assets/logo/frambini.png
+  slug: frambini
+  type: COMMERCIAL
+  year: 2025
+  features:
+    - Поиск товаров и добавление в корзину
+    - Онлайн оплата через ЮKassa
+
+- title: Crypto Tracker
+  short_description: Telegram-бот для мониторинга транзакций кошельков и отслеживания изменения цен.
+  description:
+  slug: crypto-tracker
+  type: COMMERCIAL
+  year: 2025
+
+- title: Crypro Signals
+  short_description: Telegram-бот для поиска крипты, которая может дать рост в ближайшем времени.
+  description:
+  slug: crypto-signals
+  type: COMMERCIAL
+  year: 2025
+
+- title: SiteON
+  short_description: Бот для мониторинга доступности сайтов из различных стран.
+  description:
+  image: src/assets/logo/site-on.png
+  slug: site-on
+  type: COMMERCIAL
+  year: 2025
+
+- title: VibeFix
+  short_description: Лендинг для доработки проектов после ИИ.
+  description: |
+    Сайт-визитка для привлечения клиентов, у которых проект почти работает, но требует доработки.
+    На сайте описаны услуги, показаны кейсы, собраны ответы на частые вопросы и есть форма обратной связи.
+    К сайту подключены сервисы мониторинга и аналитики: ошибки отслеживаются в Sentry,
+    посещаемость и конверсии в Umami и Яндекс Метрике, а формы защищены ограничением запросов.
+  image: src/assets/logo/vibefix.png
+  slug: vibefix
+  type: PET
+  url: https://vibefix.ru
+  year: 2026
+  features:
+    - Логирование в Sentry
+    - Аналитика через Umami и Яндекс Метрику
+    - Защита форм от спама
+
+- title: Парсер Лидов
+  short_description: Юзер-бот в телеграм для поиска лидов в чатах и каналах Telegram
+  description:
+  slug: lead-parser
+  type: PET
+  github: https://github.com/Bigbear2006/lead-parser
+  year: 2026
+
+- title: Automated Browser
+  short_description: Проект для автоматизации браузера с помощью OpenAI Agents и Playwright
+  description:
+  slug: automated-browser
+  type: PET
+  github: https://github.com/Bigbear2006/automated-browser
+  year: 2026
