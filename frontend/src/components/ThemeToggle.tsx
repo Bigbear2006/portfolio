@@ -74,7 +74,7 @@ export default function ThemeToggle() {
       onClick={toggleMode}
       aria-label={label}
       title={label}
-      className="transition self-end sm:p-2.5"
+      className="transition sm:p-2.5"
     >
       {mode === 'auto' ? 'Auto' : mode === 'dark' ? <Moon /> : <Sun />}
     </button>

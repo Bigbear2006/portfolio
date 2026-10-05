@@ -1,11 +1,12 @@
-import ThemeToggle from '#/components/ThemeToggle.tsx'
 import { useLoaderData, useNavigate } from '@tanstack/react-router'
 import { Skill } from '#/components/Skill.tsx'
 import { Card, CardList } from '#/components/Card.tsx'
 import { Section, SectionTitle } from '#/components/Section.tsx'
-import PlaceholderImage from '#/assets/placeholder.png'
+import ResumePhoto from '#/assets/resume-photo.png'
 import { Button } from '#/components/Button.tsx'
 import { useRef } from 'react'
+import { ContactRequestFormModal } from '#/components/ContactRequestForm.tsx'
+import { useModalContext } from '#/context.tsx'
 
 const stackTabs = [
   {
@@ -44,24 +45,25 @@ export function PortfolioPage() {
   const projects = useLoaderData({ from: '/_layout' })
   const navigate = useNavigate()
 
+  const { openModal } = useModalContext()
   const projectsRef = useRef<HTMLDivElement>(null)
 
   return (
     <>
-      <ThemeToggle />
-
-      <div className="flex flex-col md:flex-row gap-12 md:gap-6 justify-center md:justify-between md:items-center text-center sm:p-10">
-        <div className="flex flex-col gap-12 max-w-2xl">
-          <div className="flex flex-col gap-4 items-center text-center md:items-start md:text-left">
-            <h1 className="text-5xl font-semibold font-mono">Михаил Мороз</h1>
-            <h2 className="text-2xl text-pretty">
+      <div className="flex flex-col lg:flex-row gap-6 md:gap-12 justify-center lg:justify-between items-center text-center sm:p-10">
+        <div className="flex flex-1 flex-col gap-8 lg:gap-12 justify-center max-w-2xl">
+          <div className="flex flex-col gap-4 items-center text-center lg:items-start lg:text-left">
+            <h1 className="max-[400px]:text-3xl text-4xl lg:text-5xl font-semibold font-mono">
+              Михаил Мороз
+            </h1>
+            <h2 className="max-[400px]:text-lg text-xl lg:text-2xl text-pretty max-w-md lg:max-w-none">
               Я Fullstack Разработчик с опытом создания веб-сайтов,
               Telegram-ботов и Telegram Web Apps от проектирования архитектуры
               до деплоя и сопровождения.
             </h2>
           </div>
-          <div className="flex flex-col md:flex-row gap-4">
-            <Button variant="accent" size="lg">
+          <div className="flex justify-center lg:justify-start gap-4 flex-wrap">
+            <Button variant="accent" size="lg" onClick={openModal}>
               Связаться
             </Button>
             <Button
@@ -77,11 +79,11 @@ export function PortfolioPage() {
             </Button>
           </div>
         </div>
-        <img
-          src={PlaceholderImage}
-          alt="Михаил Мороз"
-          className="w-100 h-auto order-first md:order-none self-center md:self-auto"
-        />
+        <div className="p-5 pb-0 order-first lg:order-none">
+          <div className="flex justify-center items-end bg-card/25 overflow-hidden rounded-full shadow-lg border-3 border-border w-full aspect-square max-w-80 max-h-80 self-center lg:self-auto">
+            <img src={ResumePhoto} alt="" />
+          </div>
+        </div>
       </div>
 
       <div className="flex flex-col gap-2.5">
@@ -163,6 +165,8 @@ export function PortfolioPage() {
             ))}
           </CardList>
         </Section>
+
+        <ContactRequestFormModal />
       </div>
     </>
   )

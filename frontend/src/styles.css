@@ -13,7 +13,16 @@
   --color-card: rgba(181 181 181 / 0.45);
   --color-border: rgba(255, 255, 255, 0.4);
   --color-muted: #78716c;
-  --color-accent: #047091;
+  --color-accent: #30a8cc;
+  --color-popover: #B8E6FEFF;
+}
+
+@theme inline {
+  --color-ring: var(--color-primary);
+  --color-input: var(--color-border);
+  /*--color-popover: var(--color-sky-200);*/
+  --color-destructive: var(--color-amber-500);
+  --color-muted-foreground: var(--color-muted)
 }
 
 .dark {
@@ -23,6 +32,8 @@
   --color-card: rgb(181 181 181 / 0.45);
   --color-border: rgba(255, 255, 255, 0.08);
   --color-muted: #a6a6a6;
+  --color-accent: #047091;
+  --color-popover: #00598AFF;
 }
 
 @layer base {

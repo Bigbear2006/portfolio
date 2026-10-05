@@ -192,5 +192,5 @@ export function Icon({ name, className }: IconProps) {
   if (name in icons) {
     return icons[name]
   }
-  return <StackIcon name={name} className={cn('w-5 h-5', className)} />
+  return <StackIcon name={name} className={cn('size-5', className)} />
 }
