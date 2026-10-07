@@ -23,6 +23,7 @@
   /*--color-popover: var(--color-sky-200);*/
   --color-destructive: var(--color-amber-500);
   --color-muted-foreground: var(--color-muted);
+  --c: var(--color-sky-800);
 }
 
 .dark {

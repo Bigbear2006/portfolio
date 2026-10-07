@@ -1,7 +1,7 @@
 - title: Prime Electronics
   short_description: Интернет магазин электроники
   description: Интернет магазин электроники
-  logo: src/assets/logos/prime-electronics.png
+  logo: logos/prime-electronics.png
   slug: prime-electronics
   type: COMMERCIAL
   url: https://prime-electronics.ru
@@ -17,7 +17,7 @@
     Пользователь может прикреплять к своему вопросу Фото, Файлы (PDF, Excel) или записывать вопрос голосом.
     В ответ бот может прислать не только текст, но и готовый PDF или Excel Файл.
     Работает по подписке с оплатой через Юкассу, есть тестовый период.
-  logo: src/assets/logos/neurochef.png
+  logo: logos/neurochef.png
   slug: neurochef
   type: COMMERCIAL
   year: 2026
@@ -81,7 +81,7 @@
     Главная инженерная задача — огромный объём фото, видео и документов. Каждый файл
     загружается на сервера Telegram один раз и дальше отправляется по file_id,
     поэтому бот отвечает быстро и не загружает файлы повторно.
-  logo: src/assets/logos/dom-kit.png
+  logo: logos/dom-kit.png
   slug: dom-kit
   type: COMMERCIAL
   year: 2025
@@ -101,7 +101,7 @@
     Работодатель регистрирует свои ПВЗ и создаёт смены, а соискатель получает подборку
     подходящих вакансий по навыкам и местоположению. Навыки можно подтвердить квизами,
     а реферальная система помогает боту расти за счёт самих пользователей.
-  logo: src/assets/logos/pickup-points.png
+  logo: logos/pickup-points.png
   slug: pickup-points
   type: COMMERCIAL
   year: 2025
@@ -120,7 +120,7 @@
     Бот для выездного мероприятия: гость выбирает мороженое, оплачивает прямо в Telegram,
     указывает свой ряд и место, и заказ приносят ему на место.
     Не нужно стоять в очереди или носить с собой наличные.
-  logo: src/assets/logos/frambini.png
+  logo: logos/frambini.png
   slug: frambini
   type: COMMERCIAL
   year: 2025
@@ -151,7 +151,7 @@
 - title: SiteON
   short_description: Бот для мониторинга доступности сайтов из различных стран.
   description:
-  logo: src/assets/logos/site-on.png
+  logo: logos/site-on.png
   slug: site-on
   type: COMMERCIAL
   year: 2025
@@ -165,7 +165,7 @@
     На сайте описаны услуги, показаны кейсы, собраны ответы на частые вопросы и есть форма обратной связи.
     К сайту подключены сервисы мониторинга и аналитики: ошибки отслеживаются в Sentry,
     посещаемость и конверсии в Umami и Яндекс Метрике, а формы защищены ограничением запросов.
-  logo: src/assets/logos/vibefix.png
+  logo: logos/vibefix.png
   slug: vibefix
   type: PET
   url: https://vibefix.ru

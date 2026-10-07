@@ -39,7 +39,7 @@ export function ProjectListPage() {
         <div className="space-y-5">
           <h1 className="text-4xl font-semibold">Мои проекты</h1>
           <div className="flex gap-4 flex-wrap">
-            {PROJECT_TYPES.map((elem) => (
+            {(['ALL', ...PROJECT_TYPES] as const).map((elem) => (
               <button
                 key={elem}
                 className={cn(

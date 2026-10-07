@@ -8,6 +8,8 @@ import { config } from '#/config.ts'
 
 const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getItem('theme');var mode=(stored==='light'||stored==='dark'||stored==='auto')?stored:'auto';var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;var resolved=mode==='auto'?(prefersDark?'dark':'light'):mode;var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(resolved);if(mode==='auto'){root.removeAttribute('data-theme')}else{root.setAttribute('data-theme',mode)}root.style.colorScheme=resolved;}catch(e){}})();`
 
+const url = new URL(config.BASE_API_URL).origin
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -29,9 +31,32 @@ export const Route = createRootRoute({
     ],
     links: [
       {
+        rel: 'canonical',
+        href: url,
+      },
+      {
         rel: 'stylesheet',
         href: appCss,
       },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: 'apple-touch-icon.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/favicon-32x32.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/favicon-16x16.png',
+      },
+      { rel: 'manifest', href: '/site.webmanifest' },
+      { rel: 'icon', href: '/favicon.ico' },
     ],
   }),
   shellComponent: RootDocument,
