@@ -9,7 +9,7 @@ from starlette.middleware.cors import CORSMiddleware
 
 from portfolio.infrastructure.config import AppConfig
 from portfolio.infrastructure.di.container import container
-from portfolio.infrastructure.log import configure_logging
+from portfolio.infrastructure.log import configure_logging, logger
 from portfolio.presentation.api.admin import setup_admin_panel
 from portfolio.presentation.api.exception_handler import setup_exception_handlers
 from portfolio.presentation.api.routers import api_router
@@ -23,6 +23,8 @@ async def lifespan(_app: FastAPI) -> AsyncGenerator[None]:
 
 def create_app(_container: AsyncContainer) -> FastAPI:
     configure_logging()
+    logger.info('Application started')
+
     app = FastAPI(lifespan=lifespan)
     app.include_router(api_router)
 

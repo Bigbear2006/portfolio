@@ -2,6 +2,7 @@ import { SocialLink } from '#/components/SocialLink.tsx'
 import { Icon } from '#/components/Icon.tsx'
 import { Card, CardList } from '#/components/Card.tsx'
 import { Section } from '#/components/Section.tsx'
+import { config } from '#/config.ts'
 
 export function Footer() {
   return (
@@ -10,7 +11,7 @@ export function Footer() {
         <Card>
           <div>
             <p className="self-center sm:self-auto underline-offset-2 hover:underline">
-              contact@mikhailmoroz.com
+              {config.EMAIL}
             </p>
             <p className="text-sm">Политика конфиденциальности</p>
           </div>

@@ -1,5 +1,6 @@
 import axios from 'axios'
+import { config } from '#/config.ts'
 
 export const axiosInstance = axios.create({
-  baseURL: 'http://localhost:8000/api/v1',
+  baseURL: config.BASE_API_URL,
 })
