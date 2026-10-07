@@ -5,7 +5,6 @@ import { Section, SectionTitle } from '#/components/Section.tsx'
 import ResumePhoto from '#/assets/resume-photo.png'
 import { Button } from '#/components/Button.tsx'
 import { useRef } from 'react'
-import { ContactRequestFormModal } from '#/components/ContactRequestForm.tsx'
 import { useModalContext } from '#/context.tsx'
 
 const stackTabs = [
@@ -165,8 +164,6 @@ export function PortfolioPage() {
             ))}
           </CardList>
         </Section>
-
-        <ContactRequestFormModal />
       </div>
     </>
   )

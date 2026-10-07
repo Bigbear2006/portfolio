@@ -12,10 +12,10 @@ import { useContactRequestForm } from '#/hooks/forms/contact-request.ts'
 import { Input } from '#/components/ui/input.tsx'
 import { Dialog, DialogContent } from '#/components/ui/dialog.tsx'
 import { useContactRequestMutation } from '#/hooks/mutations/contact-request.ts'
-import {useModalContext} from "#/context.tsx";
+import { useModalContext } from '#/context.tsx'
 
 export function ContactRequestFormModal() {
-  const {isOpen, setIsOpen, openModal} = useModalContext()
+  const { isOpen, setIsOpen, openModal } = useModalContext()
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent>

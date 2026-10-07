@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "private": true,
-  "version": "3.0.0",
+  "version": "3.2.0",
   "type": "module",
   "imports": {
     "#/*": "./src/*"
@@ -13,7 +13,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "lint": "eslint",
-    "format": "prettier --write . && eslint --fix",
+    "format": "prettier --write .",
     "check": "prettier --check ."
   },
   "dependencies": {

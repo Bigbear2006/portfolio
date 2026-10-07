@@ -1,24 +1,29 @@
 import { useLoaderData, useNavigate } from '@tanstack/react-router'
 import { Card, CardList } from '#/components/Card.tsx'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, GraduationCap } from 'lucide-react'
 import { useState } from 'react'
 import { cn } from '#/lib/utils.ts'
 import { Icon } from '#/components/Icon.tsx'
 import { PROJECT_TYPES } from '#/types.ts'
 import type { ProjectType } from '#/types.ts'
 
-const projectTypesLabels: Record<ProjectType, string> = {
+const projectTypesLabels: Record<ProjectType | 'ALL', string> = {
   ALL: 'Все',
   COMMERCIAL: 'Коммерческие',
   PET: 'Pet-проекты',
   HACKATHON: 'Хакатоны',
 }
 
+const projectIcons: Record<string, React.ReactNode> = {
+  github: <Icon name="github" className="size-20" />,
+  'graduation-cap': <GraduationCap className="size-30" />,
+}
+
 export function ProjectListPage() {
   const navigate = useNavigate({ from: '/projects' })
   const projects = useLoaderData({ from: '/_layout' })
 
-  const [projectType, setProjectType] = useState<ProjectType>('ALL')
+  const [projectType, setProjectType] = useState<ProjectType | 'ALL'>('ALL')
 
   return (
     <div className="flex flex-col gap-2.5">
@@ -68,19 +73,17 @@ export function ProjectListPage() {
                     })
                   }
                 >
-                  {project.image ? (
+                  {project.logo ? (
                     <img
-                      src={project.image}
+                      src={project.logo}
                       alt={project.title}
-                      className="w-60 h-auto max-h-60 object-cover rounded-xl"
+                      className="w-40 sm:w-60 h-auto max-h-40 sm:max-h-60 object-cover rounded-xl"
                     />
                   ) : (
-                    <div className="flex justify-center items-center bg-card/50 text-7xl font-bold max-w-60 max-h-60 rounded-xl w-full h-full">
-                      {project.github ? (
-                        <Icon name="github" className="size-20" />
-                      ) : (
-                        project.title.charAt(0)
-                      )}
+                    <div className="flex justify-center items-center bg-card/50 text-7xl font-bold max-w-60 max-h-60 rounded-xl w-full h-full aspect-square">
+                      {project.icon && projectIcons[project.icon]
+                        ? projectIcons[project.icon]
+                        : project.title.charAt(0)}
                     </div>
                   )}
                   <div className="flex flex-col gap-2 self-start md:w-0 md:min-w-full">

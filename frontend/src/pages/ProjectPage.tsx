@@ -8,6 +8,8 @@ import {
   useNavigate,
   useParams,
 } from '@tanstack/react-router'
+import { Button } from '#/components/Button.tsx'
+import { projectTypeLabels, roleLabels } from '#/types.ts'
 
 export function ProjectPage() {
   const { slug } = useParams({ from: '/_layout/project/$slug' })
@@ -19,8 +21,16 @@ export function ProjectPage() {
     throw notFound()
   }
 
+  const blocks = [
+    project.type === 'COMMERCIAL' && project.company
+      ? { label: 'Компания', value: project.company }
+      : { label: 'Тип проекта', value: projectTypeLabels[project.type] },
+    { label: 'Роль', value: roleLabels[project.role || 'SOLO'] },
+    { label: 'Год', value: project.year },
+  ]
+
   return (
-    <Section>
+    <Section className="gap-8">
       <div
         className="flex gap-2 pb-4"
         onClick={() => navigate({ to: '/projects' })}
@@ -29,23 +39,35 @@ export function ProjectPage() {
         <p className="text-lg font-semibold">Все проекты</p>
       </div>
 
-      <div className="flex flex-col gap-4 pb-6">
+      <div className="flex flex-col gap-4">
         <h1 className="text-4xl font-semibold">{project.title}</h1>
         <p className="text-xl">{project.description}</p>
         <div className="flex gap-4 text-nowrap">
           {project.url && (
-            <button className="flex items-center gap-2 border-2 border-border py-2 px-4 rounded-xl shadow-md">
+            <Button variant="outline">
               <Globe />
               Сайт
-            </button>
+            </Button>
           )}
           {project.github && (
-            <button className="flex items-center gap-2 border-2 border-border py-2 px-4 rounded-xl shadow-md">
+            <Button variant="outline">
               <Icon name="github" />
               GitHub
-            </button>
+            </Button>
           )}
         </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 border-2 border-border/50 rounded-xl bg-card/5 backdrop-blur-lg shadow-md">
+        {blocks.map((block) => (
+          <div
+            key={block.label}
+            className="flex flex-col justify-center border-border/50 border-b-2 p-5 md:border-b-0 md:border-r-2 last:border-0"
+          >
+            <p className="text-sm font-mono">{block.label}</p>
+            <p className="text-lg font-medium">{block.value}</p>
+          </div>
+        ))}
       </div>
 
       {project.features && (
@@ -53,7 +75,7 @@ export function ProjectPage() {
           <SectionTitle title="Технические особенности" />
           <CardList>
             {project.features.map((elem, index) => (
-              <Card key={elem} className="py-4 px-6">
+              <Card key={elem} className="items-start py-4 px-6">
                 <div className="flex gap-4 items-center justify-center">
                   <p className="text-lg font-mono">{index + 1}</p>
                   <p className="text-lg">{elem}</p>

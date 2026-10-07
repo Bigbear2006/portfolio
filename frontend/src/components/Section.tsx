@@ -34,7 +34,9 @@ export function SectionTitle({
       onClick={() => navigate({ to: navigateTo })}
     >
       <div className="flex gap-4">
-        <h2 className="text-2xl font-mono">{title}</h2>
+        <h2 className="text-2xl font-mono tracking-tight font-medium">
+          {title}
+        </h2>
         {navigateTo && <ArrowRight className="self-center mt-0.5" />}
       </div>
     </div>

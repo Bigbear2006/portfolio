@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Moon, Sun } from 'lucide-react'
+import { Button } from '#/components/Button.tsx'
 
 type ThemeMode = 'light' | 'dark' | 'auto'
 
@@ -69,14 +70,14 @@ export default function ThemeToggle() {
       : `Theme mode: ${mode}. Click to switch mode.`
 
   return (
-    <button
+    <Button
+      variant="outline"
       type="button"
       onClick={toggleMode}
       aria-label={label}
       title={label}
-      className="transition sm:p-2.5"
     >
       {mode === 'auto' ? 'Auto' : mode === 'dark' ? <Moon /> : <Sun />}
-    </button>
+    </Button>
   )
 }

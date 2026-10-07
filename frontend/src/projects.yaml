@@ -1,10 +1,13 @@
 - title: Prime Electronics
   short_description: Интернет магазин электроники
   description: Интернет магазин электроники
+  logo: src/assets/logos/prime-electronics.png
   slug: prime-electronics
   type: COMMERCIAL
   url: https://prime-electronics.ru
   year: 2026
+  company: Cortex Digital
+  role: MAINTENANCE
 
 - title: Нейрошеф
   short_description: Telegram Web App для помощи в управлении рестораном и кухней.
@@ -14,10 +17,12 @@
     Пользователь может прикреплять к своему вопросу Фото, Файлы (PDF, Excel) или записывать вопрос голосом.
     В ответ бот может прислать не только текст, но и готовый PDF или Excel Файл.
     Работает по подписке с оплатой через Юкассу, есть тестовый период.
-  image: src/assets/logo/neurochef.png
+  logo: src/assets/logos/neurochef.png
   slug: neurochef
   type: COMMERCIAL
-  year: 2025
+  year: 2026
+  company: BOTTEC
+  role: SOLO
   features:
     - Обработка фото, файлов и аудио в вопросах
     - Генерация PDF и Excel файлов в ответе
@@ -32,12 +37,13 @@
     Сайт предоставляет функционал для управления участниками организации,
     групповыми и индивидуальными курсами, расписанием,
     а также позволяет вести учёт посещаемости и оплат.
-  image: src/assets/logo/classflow.png
+  icon: graduation-cap
   slug: classflow
   type: PET
   url: classflow.ru
   github: https://github.com/Bigbear2006/classflow
   year: 2026
+  role: SOLO
   features:
     - JWT-Авторизация с подтверждением почты
     - Изоляция данных разных организаций на уровне БД (Row-Level Security
@@ -52,10 +58,12 @@
     фоновые задачи на Celery и Redis, контейнеризацию в Docker, Nginx и настроенный CI/CD.
     В проекте есть ruff для линтинга и mypy для типизации, а часто нужные middleware и фильтры уже написаны.
     Это намного сокращает время на старт нового проекта.
+  icon: github
   slug: telegram-bot-template
   type: PET
   github: https://github.com/Bigbear2006/aiogram-django-template
   year: 2026
+  role: SOLO
   features:
     - aiogram + Django с админ-панелью
     - Celery и Redis для фоновых задач
@@ -73,10 +81,12 @@
     Главная инженерная задача — огромный объём фото, видео и документов. Каждый файл
     загружается на сервера Telegram один раз и дальше отправляется по file_id,
     поэтому бот отвечает быстро и не загружает файлы повторно.
-  image: src/assets/logo/dom-kit.png
+  logo: src/assets/logos/dom-kit.png
   slug: dom-kit
   type: COMMERCIAL
   year: 2025
+  company: BOTTEC
+  role: SOLO
   features:
     - Поиск по фильтрам и по картинкам (очередь, секция, этаж)
     - Избранное и подписка на обновления (например, изменение цены)
@@ -91,10 +101,12 @@
     Работодатель регистрирует свои ПВЗ и создаёт смены, а соискатель получает подборку
     подходящих вакансий по навыкам и местоположению. Навыки можно подтвердить квизами,
     а реферальная система помогает боту расти за счёт самих пользователей.
-  image: src/assets/logo/pickup-points.png
+  logo: src/assets/logos/pickup-points.png
   slug: pickup-points
   type: COMMERCIAL
   year: 2025
+  company: BOTTEC
+  role: SOLO
   features:
     - 'Две роли: работник и работодатель'
     - Управление ПВЗ и создание смен
@@ -108,10 +120,12 @@
     Бот для выездного мероприятия: гость выбирает мороженое, оплачивает прямо в Telegram,
     указывает свой ряд и место, и заказ приносят ему на место.
     Не нужно стоять в очереди или носить с собой наличные.
-  image: src/assets/logo/frambini.png
+  logo: src/assets/logos/frambini.png
   slug: frambini
   type: COMMERCIAL
   year: 2025
+  company: BOTTEC
+  role: SOLO
   features:
     - Поиск товаров и добавление в корзину
     - Онлайн оплата через ЮKassa
@@ -122,6 +136,8 @@
   slug: crypto-tracker
   type: COMMERCIAL
   year: 2025
+  company: BOTTEC
+  role: SOLO
 
 - title: Crypro Signals
   short_description: Telegram-бот для поиска крипты, которая может дать рост в ближайшем времени.
@@ -129,14 +145,18 @@
   slug: crypto-signals
   type: COMMERCIAL
   year: 2025
+  company: BOTTEC
+  role: SOLO
 
 - title: SiteON
   short_description: Бот для мониторинга доступности сайтов из различных стран.
   description:
-  image: src/assets/logo/site-on.png
+  logo: src/assets/logos/site-on.png
   slug: site-on
   type: COMMERCIAL
   year: 2025
+  company: BOTTEC
+  role: SOLO
 
 - title: VibeFix
   short_description: Лендинг для доработки проектов после ИИ.
@@ -145,15 +165,16 @@
     На сайте описаны услуги, показаны кейсы, собраны ответы на частые вопросы и есть форма обратной связи.
     К сайту подключены сервисы мониторинга и аналитики: ошибки отслеживаются в Sentry,
     посещаемость и конверсии в Umami и Яндекс Метрике, а формы защищены ограничением запросов.
-  image: src/assets/logo/vibefix.png
+  logo: src/assets/logos/vibefix.png
   slug: vibefix
   type: PET
   url: https://vibefix.ru
   year: 2026
-  features:
-    - Логирование в Sentry
-    - Аналитика через Umami и Яндекс Метрику
-    - Защита форм от спама
+  role: SOLO
+#  features:
+#    - Логирование в Sentry
+#    - Аналитика через Umami и Яндекс Метрику
+#    - Защита форм от спама
 
 - title: Парсер Лидов
   short_description: Юзер-бот в телеграм для поиска лидов в чатах и каналах Telegram
@@ -162,6 +183,7 @@
   type: PET
   github: https://github.com/Bigbear2006/lead-parser
   year: 2026
+  role: SOLO
 
 - title: Automated Browser
   short_description: Проект для автоматизации браузера с помощью OpenAI Agents и Playwright
@@ -170,3 +192,4 @@
   type: PET
   github: https://github.com/Bigbear2006/automated-browser
   year: 2026
+  role: SOLO

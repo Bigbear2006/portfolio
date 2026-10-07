@@ -3,7 +3,7 @@ import type { VariantProps } from 'class-variance-authority'
 import { cn } from '#/lib/utils.ts'
 
 export const buttonVariants = cva(
-  'flex justify-center items-center rounded-xl text-center transition shadow-xl hover:ring-4 ring-primary/10 backdrop-blur-lg border-2 border-border whitespace-nowrap',
+  'flex gap-2 justify-center items-center rounded-xl text-center transition shadow-xl hover:ring-4 ring-primary/10 backdrop-blur-lg border-2 border-border whitespace-nowrap',
   {
     variants: {
       variant: {
