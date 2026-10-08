@@ -9,8 +9,8 @@ export function Footer() {
     <Section>
       <CardList>
         <Card>
-          <div>
-            <p className="self-center sm:self-auto underline-offset-2 hover:underline">
+          <div className="space-y-2 sm:space-y-0 text-center sm:text-left">
+            <p className="text-sm sm:text-md self-center sm:self-auto underline-offset-2 hover:underline">
               {config.EMAIL}
             </p>
             <p className="text-sm">Политика конфиденциальности</p>
@@ -24,10 +24,10 @@ export function Footer() {
               url="https://github.com/Bigbear2006"
               icon={<Icon name="github" />}
             />
-            {/*<SocialLink*/}
+            {/* <SocialLink*/}
             {/*  url="https://t.me/bigbeardev"*/}
             {/*  icon={<Icon name="telegram" />}*/}
-            {/*/>*/}
+            {/* />*/}
           </div>
         </Card>
       </CardList>

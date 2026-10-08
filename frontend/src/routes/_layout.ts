@@ -8,7 +8,12 @@ import type { Project } from '#/types.ts'
 const getProjects = createServerFn().handler(async () => {
   return (
     parse(readFileSync('src/projects.yaml', 'utf-8')) as Project[]
-  ).filter((project) => project.features && project.features.length > 0)
+  ).filter(
+    (project) =>
+      (project.is_active ?? true) &&
+      project.features &&
+      project.features.length > 0,
+  )
 })
 
 export const Route = createFileRoute('/_layout')({

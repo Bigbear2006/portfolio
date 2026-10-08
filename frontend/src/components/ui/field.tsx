@@ -99,7 +99,6 @@ function FieldContent({ className, ...props }: React.ComponentProps<'div'>) {
 
 function FieldLabel({
   className,
-  children,
   ...props
 }: React.ComponentProps<typeof Label>) {
   return (
@@ -112,9 +111,7 @@ function FieldLabel({
         className,
       )}
       {...props}
-    >
-      {children}
-    </Label>
+    />
   )
 }
 

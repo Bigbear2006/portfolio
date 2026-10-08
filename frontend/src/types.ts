@@ -1,7 +1,7 @@
 export const PROJECT_TYPES = ['COMMERCIAL', 'PET', 'HACKATHON'] as const
 export type ProjectType = (typeof PROJECT_TYPES)[number]
 
-export const ROLES = ['SOLO', 'MAINTENANCE'] as const
+export const ROLES = ['SOLO', 'MAINTENANCE', 'TEAM'] as const
 export type Role = (typeof ROLES)[number]
 
 export interface Project {
@@ -17,7 +17,9 @@ export interface Project {
   year?: string
   company?: string
   role: Role
+  place?: number
   features?: string[]
+  is_active?: boolean
 }
 
 export const projectTypeLabels: Record<ProjectType, string> = {
@@ -29,4 +31,5 @@ export const projectTypeLabels: Record<ProjectType, string> = {
 export const roleLabels: Record<Role, string> = {
   SOLO: 'Разработка с нуля',
   MAINTENANCE: 'Доработка проекта',
+  TEAM: 'Работа в команде',
 }

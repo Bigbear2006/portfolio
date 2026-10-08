@@ -21,10 +21,17 @@ export function ProjectPage() {
     throw notFound()
   }
 
+  const projectTypeLabel = projectTypeLabels[project.type]
   const blocks = [
     project.type === 'COMMERCIAL' && project.company
       ? { label: 'Компания', value: project.company }
-      : { label: 'Тип проекта', value: projectTypeLabels[project.type] },
+      : {
+          label: 'Тип проекта',
+          value:
+            project.type === 'HACKATHON' && project.place
+              ? `${projectTypeLabel} (${project.place} место)`
+              : projectTypeLabel,
+        },
     { label: 'Роль', value: roleLabels[project.role || 'SOLO'] },
     { label: 'Год', value: project.year },
   ]

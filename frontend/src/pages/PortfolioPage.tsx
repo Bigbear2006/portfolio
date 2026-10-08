@@ -7,6 +7,31 @@ import { Button } from '#/components/Button.tsx'
 import { useRef } from 'react'
 import { useModalContext } from '#/context.tsx'
 
+const services = [
+  {
+    title: 'Веб-разработка',
+    description:
+      'Разработка сайтов от формирования ТЗ до деплоя и сопровождения',
+  },
+  {
+    title: 'Telegram',
+    description: 'Разработка Telegram-ботов и Telegram Mini Apps',
+  },
+  {
+    title: 'Доработка',
+    description: 'Исправление и доработка существующих проектов',
+  },
+  {
+    title: 'Интеграции',
+    description:
+      'Подключение любых платежных систем к вашему проекту, интеграция ИИ, CRM и других сторонних API',
+  },
+  {
+    title: 'Деплой',
+    description: 'Развертывание проектов на сервере и дальнейшее сопровождение',
+  },
+]
+
 const stackTabs = [
   {
     title: 'Backend',
@@ -89,31 +114,7 @@ export function PortfolioPage() {
         <Section>
           <SectionTitle title="Чем я занимаюсь" />
           <CardList>
-            {[
-              {
-                title: 'Веб-разработка',
-                description:
-                  'Разработка сайтов от формирования ТЗ до деплоя и сопровождения',
-              },
-              {
-                title: 'Telegram',
-                description: 'Разработка Telegram-ботов и Telegram Mini Apps',
-              },
-              {
-                title: 'Доработка',
-                description: 'Исправление и доработка существующих проектов',
-              },
-              {
-                title: 'Интеграции',
-                description:
-                  'Подключение любых платежных систем к вашему проекту, интеграция ИИ, CRM и других сторонних API',
-              },
-              {
-                title: 'Деплой',
-                description:
-                  'Развертывание проектов на сервере и дальнейшее сопровождение',
-              },
-            ].map((elem, index) => (
+            {services.map((elem, index) => (
               <Card key={index}>
                 <div className="flex flex-col gap-2">
                   <p className="text-lg font-medium">{elem.title}</p>
@@ -146,7 +147,7 @@ export function PortfolioPage() {
             {projects.slice(0, 5).map((project) => (
               <Card key={project.title}>
                 <div className="flex flex-col gap-2">
-                  <p className="text-xl font-medium">{project.title}</p>
+                  <p className="text-xl font-semibold">{project.title}</p>
                   <p className="text-muted">{project.short_description}</p>
                 </div>
                 <Button

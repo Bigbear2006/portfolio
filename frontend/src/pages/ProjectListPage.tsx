@@ -1,6 +1,13 @@
 import { useLoaderData, useNavigate } from '@tanstack/react-router'
 import { Card, CardList } from '#/components/Card.tsx'
-import { ArrowLeft, GraduationCap } from 'lucide-react'
+import {
+  ArrowLeft,
+  Bot,
+  CalendarDays,
+  Coins,
+  GraduationCap,
+  UserPlus,
+} from 'lucide-react'
 import { useState } from 'react'
 import { cn } from '#/lib/utils.ts'
 import { Icon } from '#/components/Icon.tsx'
@@ -17,6 +24,10 @@ const projectTypesLabels: Record<ProjectType | 'ALL', string> = {
 const projectIcons: Record<string, React.ReactNode> = {
   github: <Icon name="github" className="size-20" />,
   'graduation-cap': <GraduationCap className="size-30" />,
+  bot: <Bot className="size-30" />,
+  coins: <Coins className="size-30" />,
+  user: <UserPlus className="size-30" />,
+  calendar: <CalendarDays className="size-30" />,
 }
 
 export function ProjectListPage() {
@@ -37,7 +48,7 @@ export function ProjectListPage() {
 
       <div className="space-y-10 py-5 sm:px-5">
         <div className="space-y-5">
-          <h1 className="text-4xl font-semibold">Мои проекты</h1>
+          <h1 className="text-4xl font-mono font-semibold">Мои проекты</h1>
           <div className="flex gap-4 flex-wrap">
             {(['ALL', ...PROJECT_TYPES] as const).map((elem) => (
               <button

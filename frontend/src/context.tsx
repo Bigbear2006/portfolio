@@ -1,11 +1,5 @@
-import {
-  createContext,
-  type Dispatch,
-  type ReactNode,
-  type SetStateAction,
-  useContext,
-  useState,
-} from 'react'
+import { createContext, useContext, useState } from 'react'
+import type { Dispatch, ReactNode, SetStateAction } from 'react'
 
 interface ModalContextType {
   isOpen: boolean
