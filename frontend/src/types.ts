@@ -8,6 +8,8 @@ export interface Project {
   title: string
   short_description: string
   description: string
+  problem: string
+  solution: string
   logo?: string
   icon?: string
   slug: string
@@ -19,6 +21,7 @@ export interface Project {
   role: Role
   place?: number
   features?: string[]
+  stack?: string[]
   is_active?: boolean
 }
 

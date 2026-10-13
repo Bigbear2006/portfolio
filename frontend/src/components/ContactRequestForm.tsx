@@ -67,9 +67,6 @@ function ContactRequestForm({ onSuccess }: ContactRequestFormProps) {
                 placeholder="email@gmail.com"
                 aria-invalid={fieldState.invalid}
               />
-              <FieldDescription>
-                Необязательна, если указан телеграм
-              </FieldDescription>
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
           )}
@@ -91,6 +88,9 @@ function ContactRequestForm({ onSuccess }: ContactRequestFormProps) {
                 placeholder="@username"
                 aria-invalid={fieldState.invalid}
               />
+              <FieldDescription>
+                Можно указать либо почту, либо телеграм
+              </FieldDescription>
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
           )}

@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as LayoutRouteImport } from './routes/_layout'
 import { Route as LayoutIndexRouteImport } from './routes/_layout.index'
 import { Route as LayoutProjectsRouteImport } from './routes/_layout.projects'
+import { Route as LayoutPrivacyRouteImport } from './routes/_layout.privacy'
 import { Route as LayoutProjectSlugRouteImport } from './routes/_layout.project.$slug'
 
 const LayoutRoute = LayoutRouteImport.update({
@@ -28,6 +29,11 @@ const LayoutProjectsRoute = LayoutProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => LayoutRoute,
 } as any)
+const LayoutPrivacyRoute = LayoutPrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => LayoutRoute,
+} as any)
 const LayoutProjectSlugRoute = LayoutProjectSlugRouteImport.update({
   id: '/project/$slug',
   path: '/project/$slug',
@@ -36,10 +42,12 @@ const LayoutProjectSlugRoute = LayoutProjectSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof LayoutIndexRoute
+  '/privacy': typeof LayoutPrivacyRoute
   '/projects': typeof LayoutProjectsRoute
   '/project/$slug': typeof LayoutProjectSlugRoute
 }
 export interface FileRoutesByTo {
+  '/privacy': typeof LayoutPrivacyRoute
   '/projects': typeof LayoutProjectsRoute
   '/': typeof LayoutIndexRoute
   '/project/$slug': typeof LayoutProjectSlugRoute
@@ -47,18 +55,20 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_layout': typeof LayoutRouteWithChildren
+  '/_layout/privacy': typeof LayoutPrivacyRoute
   '/_layout/projects': typeof LayoutProjectsRoute
   '/_layout/': typeof LayoutIndexRoute
   '/_layout/project/$slug': typeof LayoutProjectSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/projects' | '/project/$slug'
+  fullPaths: '/' | '/privacy' | '/projects' | '/project/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/projects' | '/' | '/project/$slug'
+  to: '/privacy' | '/projects' | '/' | '/project/$slug'
   id:
     | '__root__'
     | '/_layout'
+    | '/_layout/privacy'
     | '/_layout/projects'
     | '/_layout/'
     | '/_layout/project/$slug'
@@ -91,6 +101,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutProjectsRouteImport
       parentRoute: typeof LayoutRoute
     }
+    '/_layout/privacy': {
+      id: '/_layout/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof LayoutPrivacyRouteImport
+      parentRoute: typeof LayoutRoute
+    }
     '/_layout/project/$slug': {
       id: '/_layout/project/$slug'
       path: '/project/$slug'
@@ -102,12 +119,14 @@ declare module '@tanstack/react-router' {
 }
 
 interface LayoutRouteChildren {
+  LayoutPrivacyRoute: typeof LayoutPrivacyRoute
   LayoutProjectsRoute: typeof LayoutProjectsRoute
   LayoutIndexRoute: typeof LayoutIndexRoute
   LayoutProjectSlugRoute: typeof LayoutProjectSlugRoute
 }
 
 const LayoutRouteChildren: LayoutRouteChildren = {
+  LayoutPrivacyRoute: LayoutPrivacyRoute,
   LayoutProjectsRoute: LayoutProjectsRoute,
   LayoutIndexRoute: LayoutIndexRoute,
   LayoutProjectSlugRoute: LayoutProjectSlugRoute,

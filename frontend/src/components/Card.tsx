@@ -33,7 +33,7 @@ export function Card({
     <div
       onClick={onClick}
       className={cn(
-        'flex flex-col gap-4 sm:flex-row justify-between sm:items-center border-t-2 border-t-border/50 first:border-0 p-6 hover:bg-card/25 transition-colors',
+        'flex flex-col gap-4 sm:flex-row justify-between sm:items-center border-t-2 border-t-border/50 first:border-0 p-6 hover:bg-card/25 transition-colors first:rounded-t-xl last:rounded-b-xl',
         className,
       )}
     >

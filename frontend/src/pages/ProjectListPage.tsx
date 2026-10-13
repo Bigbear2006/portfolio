@@ -9,17 +9,16 @@ import {
   UserPlus,
 } from 'lucide-react'
 import { useState } from 'react'
-import { cn } from '#/lib/utils.ts'
 import { Icon } from '#/components/Icon.tsx'
-import { PROJECT_TYPES } from '#/types.ts'
+import { projectTypeLabels } from '#/types.ts'
 import type { ProjectType } from '#/types.ts'
 
-const projectTypesLabels: Record<ProjectType | 'ALL', string> = {
-  ALL: 'Все',
-  COMMERCIAL: 'Коммерческие',
-  PET: 'Pet-проекты',
-  HACKATHON: 'Хакатоны',
-}
+// const projectTypesFilterLabels: Record<ProjectType | 'ALL', string> = {
+//   ALL: 'Все',
+//   COMMERCIAL: 'Коммерческие',
+//   PET: 'Pet-проекты',
+//   HACKATHON: 'Хакатоны',
+// }
 
 const projectIcons: Record<string, React.ReactNode> = {
   github: <Icon name="github" className="size-20" />,
@@ -34,6 +33,7 @@ export function ProjectListPage() {
   const navigate = useNavigate({ from: '/projects' })
   const projects = useLoaderData({ from: '/_layout' })
 
+  // @ts-ignore
   const [projectType, setProjectType] = useState<ProjectType | 'ALL'>('ALL')
 
   return (
@@ -48,21 +48,23 @@ export function ProjectListPage() {
 
       <div className="space-y-10 py-5 sm:px-5">
         <div className="space-y-5">
-          <h1 className="text-4xl font-mono font-semibold">Мои проекты</h1>
-          <div className="flex gap-4 flex-wrap">
-            {(['ALL', ...PROJECT_TYPES] as const).map((elem) => (
-              <button
-                key={elem}
-                className={cn(
-                  'hover:bg-card/50 text-lg font-medium rounded-xl px-2.5 py-1.25 text-center transition shadow-md border-2 border-border text-nowrap',
-                  elem === projectType && 'bg-card/50 backdrop-blur-lg',
-                )}
-                onClick={() => setProjectType(elem)}
-              >
-                {projectTypesLabels[elem]}
-              </button>
-            ))}
-          </div>
+          <h1 className="text-4xl font-mono font-semibold">
+            Последние проекты
+          </h1>
+          {/*<div className="flex gap-4 flex-wrap">*/}
+          {/*  {(['ALL', ...PROJECT_TYPES] as const).map((elem) => (*/}
+          {/*    <button*/}
+          {/*      key={elem}*/}
+          {/*      className={cn(*/}
+          {/*        'hover:bg-card/50 text-lg font-medium rounded-xl px-2.5 py-1.25 text-center transition shadow-md border-2 border-border text-nowrap',*/}
+          {/*        elem === projectType && 'bg-card/50 backdrop-blur-lg',*/}
+          {/*      )}*/}
+          {/*      onClick={() => setProjectType(elem)}*/}
+          {/*    >*/}
+          {/*      {projectTypesFilterLabels[elem]}*/}
+          {/*    </button>*/}
+          {/*  ))}*/}
+          {/*</div>*/}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center md:justify-between gap-8">
           {projects
@@ -97,9 +99,15 @@ export function ProjectListPage() {
                         : project.title.charAt(0)}
                     </div>
                   )}
-                  <div className="flex flex-col gap-2 self-start md:w-0 md:min-w-full">
-                    <p className="text-xl font-semibold">{project.title}</p>
-                    <p className="text-lg">{project.short_description}</p>
+                  <div className="flex flex-col gap-4 self-start md:w-0 md:min-w-full">
+                    <div className="space-y-1">
+                      <h2 className="text-xl font-semibold">{project.title}</h2>
+                      <h4 className="text-sm font-medium">
+                        {project.company || projectTypeLabels[project.type]},{' '}
+                        {project.year}
+                      </h4>
+                    </div>
+                    <h3 className="text-lg">{project.short_description}</h3>
                   </div>
                 </Card>
               </CardList>

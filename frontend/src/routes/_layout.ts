@@ -6,17 +6,16 @@ import { parse } from 'yaml'
 import type { Project } from '#/types.ts'
 
 const getProjects = createServerFn().handler(async () => {
-  return (
-    parse(readFileSync('src/projects.yaml', 'utf-8')) as Project[]
-  ).filter(
-    (project) =>
-      (project.is_active ?? true) &&
-      project.features &&
-      project.features.length > 0,
-  )
+  return (parse(readFileSync('src/projects.yaml', 'utf-8')) as Project[])
+    .filter((project) => project.is_active ?? true)
+    .slice(0, 5)
 })
 
 export const Route = createFileRoute('/_layout')({
   component: Layout,
-  loader: async () => getProjects(),
+  beforeLoad: async ({ context }) => ({
+    ...context,
+    projects: await getProjects(),
+  }),
+  loader: async ({ context }) => context.projects,
 })

@@ -5,11 +5,26 @@ interface SkillProps {
   iconName?: string
 }
 
+const iconOverrides: Record<string, string> = {
+  HTML: 'html5',
+  CSS: 'css3',
+  SCSS: 'sass',
+  Tailwind: 'tailwindcss',
+  'Next.js': 'nextjs2',
+  'TanStack Start': 'tanstack',
+}
+
 export function Skill(props: SkillProps) {
   return (
     <div className="flex gap-1 items-center bg-card/5 border-2 border-border/50 px-4 py-2 rounded-xl w-max backdrop-blur-lg hover:bg-card/25 transition-colors">
-      <Icon name={props.iconName || props.name.toLowerCase()} />
-      {props.name}
+      <Icon
+        name={
+          props.iconName ||
+          iconOverrides[props.name] ||
+          props.name.toLowerCase()
+        }
+      />
+      <h4>{props.name}</h4>
     </div>
   )
 }

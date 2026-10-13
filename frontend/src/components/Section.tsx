@@ -11,9 +11,9 @@ export function Section({
   className?: string
 }) {
   return (
-    <div className={cn('flex flex-col gap-4 py-5 sm:px-5', className)}>
+    <section className={cn('flex flex-col gap-4 py-5 sm:px-5', className)}>
       {children}
-    </div>
+    </section>
   )
 }
 

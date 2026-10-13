@@ -7,7 +7,7 @@ export function Header() {
   const { openModal } = useModalContext()
 
   return (
-    <div className="px-2.5 sm:px-10 py-5 fixed z-1 inset-0 max-h-[64px] mx-auto">
+    <header className="px-2.5 sm:px-10 py-5 fixed z-1 inset-0 max-h-[64px] mx-auto">
       <CardList className="bg-card/25 backdrop-blur-sm">
         <Card className="p-5 sm:px-10 flex-row">
           <div className="hidden sm:block ">
@@ -16,12 +16,20 @@ export function Header() {
           </div>
           <div className="flex items-center justify-between gap-2 w-full sm:w-auto">
             <ThemeToggle />
-            <Button className="font-semibold" onClick={openModal}>
+            <Button
+              className="font-semibold"
+              onClick={() => {
+                openModal()
+                window.window.umami?.track('open-contact-form', {
+                  position: 'header',
+                })
+              }}
+            >
               Связаться
             </Button>
           </div>
         </Card>
       </CardList>
-    </div>
+    </header>
   )
 }

@@ -54,12 +54,13 @@ const stackTabs = [
     title: 'Frontend',
     skills: (
       <>
-        <Skill name="HTML" iconName="html5" />
-        <Skill name="CSS" iconName="css3" />
+        <Skill name="HTML" />
+        <Skill name="CSS" />
         <Skill name="Typescript" />
         <Skill name="React" />
-        <Skill name="Tailwind" iconName="tailwindcss" />
-        <Skill name="TanStack Start" iconName="tanstack" />
+        <Skill name="Tailwind" />
+        <Skill name="Next.js" />
+        <Skill name="TanStack Start" />
       </>
     ),
   },
@@ -81,23 +82,33 @@ export function PortfolioPage() {
               Михаил Мороз
             </h1>
             <h2 className="max-[400px]:text-lg text-xl lg:text-2xl text-pretty max-w-md lg:max-w-none">
-              Я Fullstack Разработчик с опытом создания веб-сайтов,
+              Я Fullstack-Разработчик с опытом создания веб-сайтов,
               Telegram-ботов и Telegram Web Apps от проектирования архитектуры
               до деплоя и сопровождения.
             </h2>
           </div>
           <div className="flex justify-center lg:justify-start gap-4 flex-wrap">
-            <Button variant="accent" size="lg" onClick={openModal}>
+            <Button
+              variant="accent"
+              size="lg"
+              onClick={() => {
+                openModal()
+                window.window.umami?.track('open-contact-form', {
+                  position: 'hero',
+                })
+              }}
+            >
               Связаться
             </Button>
             <Button
               size="lg"
-              onClick={() =>
+              onClick={() => {
                 projectsRef.current?.scrollIntoView({
                   behavior: 'smooth',
                   block: 'start',
                 })
-              }
+                window.window.umami?.track('click-my-projects')
+              }}
             >
               Мои проекты
             </Button>
@@ -117,8 +128,8 @@ export function PortfolioPage() {
             {services.map((elem, index) => (
               <Card key={index}>
                 <div className="flex flex-col gap-2">
-                  <p className="text-lg font-medium">{elem.title}</p>
-                  <p className="text-muted">{elem.description}</p>
+                  <h3 className="text-lg font-medium">{elem.title}</h3>
+                  <h4 className="text-muted">{elem.description}</h4>
                 </div>
               </Card>
             ))}
@@ -130,7 +141,7 @@ export function PortfolioPage() {
           <div className="flex flex-col gap-4 justify-start">
             {stackTabs.map((tab) => (
               <div key={tab.title} className="flex flex-col gap-2">
-                <span className="text-lg font-mono">{tab.title}</span>
+                <h3 className="text-lg font-mono">{tab.title}</h3>
                 <div className="flex flex-wrap gap-2">{tab.skills}</div>
               </div>
             ))}
@@ -140,15 +151,15 @@ export function PortfolioPage() {
         <Section>
           <SectionTitle
             ref={projectsRef}
-            title={`Мои проекты (${projects.length})`}
+            title="Мои проекты"
             navigateTo="projects"
           />
           <CardList>
-            {projects.slice(0, 5).map((project) => (
+            {projects.map((project) => (
               <Card key={project.title}>
                 <div className="flex flex-col gap-2">
-                  <p className="text-xl font-semibold">{project.title}</p>
-                  <p className="text-muted">{project.short_description}</p>
+                  <h3 className="text-xl font-semibold">{project.title}</h3>
+                  <h4 className="text-muted">{project.short_description}</h4>
                 </div>
                 <Button
                   variant="outline"

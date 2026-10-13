@@ -1,36 +1,37 @@
 import { SocialLink } from '#/components/SocialLink.tsx'
 import { Icon } from '#/components/Icon.tsx'
 import { Card, CardList } from '#/components/Card.tsx'
-import { Section } from '#/components/Section.tsx'
 import { config } from '#/config.ts'
+import { Link } from '@tanstack/react-router'
 
 export function Footer() {
   return (
-    <Section>
-      <CardList>
-        <Card>
-          <div className="space-y-2 sm:space-y-0 text-center sm:text-left">
-            <p className="text-sm sm:text-md self-center sm:self-auto underline-offset-2 hover:underline">
-              {config.EMAIL}
-            </p>
-            <p className="text-sm">Политика конфиденциальности</p>
+    <footer className="pt-5">
+      <CardList className="bg-card/25 backdrop-blur-md shadow-lg ring-2 ring-black/5 border-0 sm:px-5">
+        <Card className="gap-6 hover:bg-transparent">
+          <div className="text-center sm:text-left">
+            <p className="self-center sm:self-auto">{config.EMAIL}</p>
+            <Link
+              to="/privacy"
+              className="text-sm underline-offset-2 hover:underline"
+            >
+              Политика конфиденциальности
+            </Link>
           </div>
           <div className="flex gap-2 justify-center">
             <SocialLink
-              url="https://www.linkedin.com/in/mikhailmoroz/"
+              url={config.LINKEDIN}
               icon={<Icon name="linkedin" />}
+              label="LinkedIn"
             />
             <SocialLink
-              url="https://github.com/Bigbear2006"
+              url={config.GITHUB}
               icon={<Icon name="github" />}
+              label="GitHub"
             />
-            {/* <SocialLink*/}
-            {/*  url="https://t.me/bigbeardev"*/}
-            {/*  icon={<Icon name="telegram" />}*/}
-            {/* />*/}
           </div>
         </Card>
       </CardList>
-    </Section>
+    </footer>
   )
 }
