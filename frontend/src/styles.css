@@ -45,3 +45,17 @@
     @apply font-sans;
   }
 }
+
+@layer utilities {
+  .backdrop-blur-xs {
+    @apply backdrop-blur-xs transform-gpu will-change-transform;
+  }
+
+  .backdrop-blur-md {
+    @apply backdrop-blur-md transform-gpu will-change-transform;
+  }
+
+  .backdrop-blur-lg {
+    @apply backdrop-blur-lg transform-gpu will-change-transform;
+  }
+}

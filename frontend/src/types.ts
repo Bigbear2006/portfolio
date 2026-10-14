@@ -7,7 +7,6 @@ export type Role = (typeof ROLES)[number]
 export interface Project {
   title: string
   short_description: string
-  description: string
   problem: string
   solution: string
   logo?: string
@@ -20,7 +19,6 @@ export interface Project {
   company?: string
   role: Role
   place?: number
-  features?: string[]
   stack?: string[]
   is_active?: boolean
 }

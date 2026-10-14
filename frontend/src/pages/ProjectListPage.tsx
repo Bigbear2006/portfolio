@@ -90,16 +90,16 @@ export function ProjectListPage() {
                     <img
                       src={project.logo}
                       alt={project.title}
-                      className="w-40 sm:w-60 h-auto max-h-40 sm:max-h-60 object-cover rounded-xl"
+                      className="w-40 md:w-60 h-auto max-h-40 md:max-h-60 object-cover rounded-xl"
                     />
                   ) : (
-                    <div className="flex justify-center items-center bg-card/50 text-7xl font-bold max-w-60 max-h-60 rounded-xl w-full h-full aspect-square">
+                    <div className="flex shrink-0 justify-center items-center bg-card/50 text-7xl font-bold w-40 md:w-60 rounded-xl aspect-square">
                       {project.icon && projectIcons[project.icon]
                         ? projectIcons[project.icon]
                         : project.title.charAt(0)}
                     </div>
                   )}
-                  <div className="flex flex-col gap-4 self-start md:w-0 md:min-w-full">
+                  <div className="flex flex-col gap-4 self-start max-[500px]:self-center max-[500px]:text-center">
                     <div className="space-y-1">
                       <h2 className="text-xl font-semibold">{project.title}</h2>
                       <h4 className="text-sm font-medium">

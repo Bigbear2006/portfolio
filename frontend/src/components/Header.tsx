@@ -8,7 +8,7 @@ export function Header() {
 
   return (
     <header className="px-2.5 sm:px-10 py-5 fixed z-1 inset-0 max-h-[64px] mx-auto">
-      <CardList className="bg-card/25 backdrop-blur-sm">
+      <CardList className="bg-card/25 backdrop-blur-xs">
         <Card className="p-5 sm:px-10 flex-row">
           <div className="hidden sm:block ">
             <h2 className="text-xl font-semibold">Михаил Мороз</h2>

@@ -67,7 +67,7 @@ export function buildProjectData(project: Project) {
     '@type': 'CreativeWork',
     '@id': `${url}/#project`,
     name: project.title,
-    description: project.description,
+    description: project.short_description,
     [credit]: { '@id': PERSON_ID },
     url,
     ...(project.logo && { image: `${config.SITE_URL}/${project.logo}` }),
