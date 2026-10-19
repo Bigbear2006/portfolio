@@ -56,6 +56,7 @@
   }
 
   .backdrop-blur-lg {
-    @apply backdrop-blur-lg transform-gpu will-change-transform;
+    /* using -md blur instead of -lg to avoid performance issues */
+    @apply backdrop-blur-md transform-gpu will-change-transform;
   }
 }
