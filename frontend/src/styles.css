@@ -7,56 +7,45 @@
 @theme {
   --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
-  --color-primary: #ffffff;
-  --color-background: #9e9e9e;
+  --base: #ffffff;
+  --color-primary: rgb(99 204 189);
   --color-foreground: #1c2d35;
-  --color-card: rgba(181 181 181 / 0.45);
-  --color-border: rgba(255, 255, 255, 0.4);
-  --color-muted: #78716c;
-  --color-accent: #30a8cc;
-  --color-popover: #b8e6feff;
+  --color-muted: #423c3c;
+  --color-accent: #5d9be4;
+  /*--color-popover: #72ba9d;*/
 }
 
 @theme inline {
+  --color-background: color-mix(
+    in oklab,
+    var(--color-primary) 25%,
+    transparent
+  );
+  --color-card: color-mix(in oklab, var(--color-primary) 50%, var(--base));
+  --color-border: color-mix(in oklab, var(--color-primary) 50%, transparent);
   --color-ring: var(--color-primary);
   --color-input: var(--color-border);
-  /*--color-popover: var(--color-sky-200);*/
   --color-destructive: var(--color-amber-500);
   --color-muted-foreground: var(--color-muted);
-  --c: var(--color-sky-800);
+  --color-popover: color-mix(in oklab, var(--color-primary) 75%, var(--base));
 }
 
 .dark {
-  --color-primary: #000000;
-  --color-background: #000000;
-  --color-foreground: #bdbdbd;
-  --color-card: rgb(181 181 181 / 0.45);
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-muted: #a6a6a6;
-  --color-accent: #047091;
-  --color-popover: #00598aff;
+  --base: #000000;
+  --color-primary: rgb(36, 93, 87);
+  /*--color-background: oklab(0.438896 -0.059847 -0.0061022 / 0.25);*/
+  --color-foreground: #dcebe4;
+  --color-muted: #ffffff;
+  --color-accent: #345584;
+  /*--color-popover: #4C856C;*/
 }
 
+/* orange: #fe8703, dark green #112b28 */
 @layer base {
   body {
-    @apply text-foreground;
+    @apply bg-background text-foreground;
   }
   html {
     @apply font-sans;
-  }
-}
-
-@layer utilities {
-  .backdrop-blur-xs {
-    @apply backdrop-blur-xs transform-gpu will-change-transform;
-  }
-
-  .backdrop-blur-md {
-    @apply backdrop-blur-md transform-gpu will-change-transform;
-  }
-
-  .backdrop-blur-lg {
-    /* using -md blur instead of -lg to avoid performance issues */
-    @apply backdrop-blur-md transform-gpu will-change-transform;
   }
 }

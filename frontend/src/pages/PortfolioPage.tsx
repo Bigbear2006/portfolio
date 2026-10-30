@@ -115,7 +115,7 @@ export function PortfolioPage() {
           </div>
         </div>
         <div className="p-5 pb-0 order-first lg:order-none">
-          <div className="flex justify-center items-end bg-card/25 overflow-hidden rounded-full shadow-lg border-3 border-border w-full aspect-square max-w-80 max-h-80 self-center lg:self-auto">
+          <div className="flex justify-center items-end bg-card overflow-hidden rounded-full shadow-lg border-3 border-border w-full aspect-square max-w-80 max-h-80 self-center lg:self-auto">
             <img src={ResumePhoto} alt="" />
           </div>
         </div>
@@ -154,27 +154,25 @@ export function PortfolioPage() {
             title="Мои проекты"
             navigateTo="projects"
           />
-          <CardList>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {projects.map((project) => (
-              <Card key={project.title}>
+              <Card
+                key={project.title}
+                className="sm:items-start md:last:col-span-2"
+                onClick={() =>
+                  navigate({
+                    to: '/project/$slug',
+                    params: { slug: project.slug },
+                  })
+                }
+              >
                 <div className="flex flex-col gap-2">
                   <h3 className="text-xl font-semibold">{project.title}</h3>
                   <h4 className="text-muted">{project.short_description}</h4>
                 </div>
-                <Button
-                  variant="outline"
-                  onClick={() =>
-                    navigate({
-                      to: '/project/$slug',
-                      params: { slug: project.slug },
-                    })
-                  }
-                >
-                  Перейти
-                </Button>
               </Card>
             ))}
-          </CardList>
+          </div>
         </Section>
       </div>
     </>

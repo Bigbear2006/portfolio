@@ -11,7 +11,10 @@ export function SocialLink({ url, icon, label }: SocialLinkProps) {
   return (
     <a
       href={url}
-      className={cn(buttonVariants({ variant: 'circle', size: 'lg' }))}
+      className={cn(
+        buttonVariants({ variant: 'circle', size: 'lg' }),
+        'dark:bg-primary',
+      )}
       target="_blank"
       aria-label={label}
     >

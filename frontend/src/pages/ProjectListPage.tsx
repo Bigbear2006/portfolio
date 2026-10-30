@@ -56,8 +56,8 @@ export function ProjectListPage() {
           {/*    <button*/}
           {/*      key={elem}*/}
           {/*      className={cn(*/}
-          {/*        'hover:bg-card/50 text-lg font-medium rounded-xl px-2.5 py-1.25 text-center transition shadow-md border-2 border-border text-nowrap',*/}
-          {/*        elem === projectType && 'bg-card/50 backdrop-blur-lg',*/}
+          {/*        'hover:bg-card text-lg font-medium rounded-xl px-2.5 py-1.25 text-center transition shadow-md border-2 border-border text-nowrap',*/}
+          {/*        elem === projectType && 'bg-card',*/}
           {/*      )}*/}
           {/*      onClick={() => setProjectType(elem)}*/}
           {/*    >*/}
@@ -66,7 +66,7 @@ export function ProjectListPage() {
           {/*  ))}*/}
           {/*</div>*/}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center md:justify-between gap-8">
+        <div className="flex flex-col justify-center md:justify-between gap-8">
           {projects
             .filter(
               (project) =>
@@ -75,10 +75,10 @@ export function ProjectListPage() {
             .map((project) => (
               <CardList
                 key={project.title}
-                className="w-full md:w-auto hover:scale-105 transition-transform"
+                className="md:w-auto transition-transform"
               >
                 <Card
-                  className="flex-row justify-start items-center max-[500px]:flex-col md:flex-col gap-8 h-full"
+                  className="flex-row justify-start items-center gap-8 h-full hover:bg-primary/50"
                   onClick={() =>
                     navigate({
                       to: '/project/$slug',
@@ -90,10 +90,10 @@ export function ProjectListPage() {
                     <img
                       src={project.logo}
                       alt={project.title}
-                      className="w-40 md:w-60 h-auto max-h-40 md:max-h-60 object-cover rounded-xl"
+                      className="w-40 h-auto max-h-40 object-cover rounded-xl"
                     />
                   ) : (
-                    <div className="flex shrink-0 justify-center items-center bg-card/50 text-7xl font-bold w-40 md:w-60 rounded-xl aspect-square">
+                    <div className="flex shrink-0 justify-center items-center bg-card text-7xl font-bold w-40 rounded-xl aspect-square bg-primary">
                       {project.icon && projectIcons[project.icon]
                         ? projectIcons[project.icon]
                         : project.title.charAt(0)}

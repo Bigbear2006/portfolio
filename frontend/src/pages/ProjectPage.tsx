@@ -82,7 +82,7 @@ export function ProjectPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 border-2 border-border/50 rounded-xl bg-card/5 backdrop-blur-lg shadow-md">
+      <div className="grid grid-cols-1 md:grid-cols-3 border-2 border-border rounded-xl bg-card">
         {blocks.map((block) => (
           <div
             key={block.label}
@@ -111,7 +111,7 @@ export function ProjectPage() {
         {info.map((elem) => (
           <div key={elem.label} className="flex flex-col gap-2">
             <h3 className="text-2xl font-mono font-medium">{elem.label}</h3>
-            <div className="flex-1 border-2 border-border/50 rounded-xl bg-card/5 backdrop-blur-lg shadow-md p-5">
+            <div className="flex-1 border-2 border-border rounded-xl bg-card shadow-md p-5">
               <h4 className="text-lg">{elem.value}</h4>
             </div>
           </div>

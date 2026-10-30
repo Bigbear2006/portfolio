@@ -16,7 +16,7 @@ const iconOverrides: Record<string, string> = {
 
 export function Skill(props: SkillProps) {
   return (
-    <div className="flex gap-1 items-center bg-card/5 border-2 border-border/50 px-4 py-2 rounded-xl w-max backdrop-blur-lg hover:bg-card/25 transition-colors">
+    <div className="flex gap-1 items-center border-2 border-border px-4 py-2 rounded-xl w-max hover:bg-card transition-colors">
       <Icon
         name={
           props.iconName ||

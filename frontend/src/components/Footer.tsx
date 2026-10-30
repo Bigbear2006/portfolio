@@ -6,9 +6,9 @@ import { Link } from '@tanstack/react-router'
 
 export function Footer() {
   return (
-    <footer className="pt-5">
-      <CardList className="bg-card/25 backdrop-blur-md shadow-lg ring-2 ring-black/5 border-0 sm:px-5">
-        <Card className="gap-6 hover:bg-transparent">
+    <footer className="p-5 sm:p-10 pt-5 sm:pt-5">
+      <CardList>
+        <Card className="gap-6">
           <div className="text-center sm:text-left">
             <p className="self-center sm:self-auto">{config.EMAIL}</p>
             <Link

@@ -8,16 +8,7 @@ export function CardList({
   className?: string
   children: ReactNode
 }) {
-  return (
-    <div
-      className={cn(
-        'flex flex-col border-2 border-border/50 rounded-xl bg-card/5 backdrop-blur-lg shadow-md',
-        className,
-      )}
-    >
-      {children}
-    </div>
-  )
+  return <div className={cn('flex flex-col gap-4', className)}>{children}</div>
 }
 
 export function Card({
@@ -33,7 +24,7 @@ export function Card({
     <div
       onClick={onClick}
       className={cn(
-        'flex flex-col gap-4 sm:flex-row justify-between sm:items-center border-t-2 border-t-border/50 first:border-0 p-6 hover:bg-card/25 transition-colors first:rounded-t-xl last:rounded-b-xl',
+        'flex flex-col gap-4 sm:flex-row justify-between sm:items-center border-2 border-border p-6 transition-colors rounded-xl bg-card',
         className,
       )}
     >
