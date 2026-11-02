@@ -12,6 +12,7 @@ import { useState } from 'react'
 import { Icon } from '#/components/Icon.tsx'
 import { projectTypeLabels } from '#/types.ts'
 import type { ProjectType } from '#/types.ts'
+import { cn } from '#/lib/utils.ts'
 
 // const projectTypesFilterLabels: Record<ProjectType | 'ALL', string> = {
 //   ALL: 'Все',
@@ -21,12 +22,12 @@ import type { ProjectType } from '#/types.ts'
 // }
 
 const projectIcons: Record<string, React.ReactNode> = {
-  github: <Icon name="github" className="size-20" />,
-  'graduation-cap': <GraduationCap className="size-30" />,
-  bot: <Bot className="size-30" />,
-  coins: <Coins className="size-30" />,
-  user: <UserPlus className="size-30" />,
-  calendar: <CalendarDays className="size-30" />,
+  github: <Icon name="github" className="size-10" />,
+  'graduation-cap': <GraduationCap />,
+  bot: <Bot />,
+  coins: <Coins />,
+  user: <UserPlus />,
+  calendar: <CalendarDays />,
 }
 
 export function ProjectListPage() {
@@ -35,6 +36,8 @@ export function ProjectListPage() {
 
   // @ts-ignore
   const [projectType, setProjectType] = useState<ProjectType | 'ALL'>('ALL')
+
+  const logoBox = 'size-20 shrink-0 rounded-xl'
 
   return (
     <div className="flex flex-col gap-2.5">
@@ -78,7 +81,7 @@ export function ProjectListPage() {
                 className="md:w-auto transition-transform"
               >
                 <Card
-                  className="flex-row justify-start items-center gap-8 h-full hover:bg-primary/50"
+                  className="flex-col sm:flex-col sm:items-start justify-start gap-4 h-full hover:bg-primary/50"
                   onClick={() =>
                     navigate({
                       to: '/project/$slug',
@@ -86,27 +89,35 @@ export function ProjectListPage() {
                     })
                   }
                 >
-                  {project.logo ? (
-                    <img
-                      src={project.logo}
-                      alt={project.title}
-                      className="w-40 h-auto max-h-40 object-cover rounded-xl"
-                    />
-                  ) : (
-                    <div className="flex shrink-0 justify-center items-center bg-card text-7xl font-bold w-40 rounded-xl aspect-square bg-primary">
-                      {project.icon && projectIcons[project.icon]
-                        ? projectIcons[project.icon]
-                        : project.title.charAt(0)}
-                    </div>
-                  )}
-                  <div className="flex flex-col gap-4 self-start max-[500px]:self-center max-[500px]:text-center">
+                  <div className="flex gap-4 max-[400px]:flex-col">
+                    {project.logo ? (
+                      <img
+                        src={project.logo}
+                        alt={project.title}
+                        className={cn(logoBox, 'object-cover')}
+                      />
+                    ) : (
+                      <div
+                        className={cn(
+                          logoBox,
+                          'flex items-center justify-center bg-primary font-bold text-4xl sm:text-7xl',
+                          '[&>svg]:size-1/2',
+                        )}
+                      >
+                        {project.icon && projectIcons[project.icon]
+                          ? projectIcons[project.icon]
+                          : project.title.charAt(0)}
+                      </div>
+                    )}
                     <div className="space-y-1">
-                      <h2 className="text-xl font-semibold">{project.title}</h2>
+                      <h3 className="text-xl font-semibold">{project.title}</h3>
                       <h4 className="text-sm font-medium">
                         {project.company || projectTypeLabels[project.type]},{' '}
                         {project.year}
                       </h4>
                     </div>
+                  </div>
+                  <div className="flex flex-col gap-4 self-start">
                     <h3 className="text-lg">{project.short_description}</h3>
                   </div>
                 </Card>

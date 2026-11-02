@@ -7,7 +7,7 @@ export function Header() {
   const { openModal } = useModalContext()
 
   return (
-    <header className="px-2.5 sm:px-10 py-5 fixed z-1 inset-0 max-h-[64px] mx-10">
+    <header className="px-2.5 sm:px-10 py-5 fixed z-1 inset-0 max-h-[64px] mx-5 sm:mx-10">
       <CardList>
         <Card className="p-5 sm:px-10 flex-row">
           <div className="hidden sm:block ">
